@@ -1,0 +1,717 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <style>
+    
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+  </style>
+
+  <body class="lab">
+
+    
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-usage" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav">
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic01/book-a-donation-01/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Donation-01
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic02-a/book-a-donation-02/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Donation-02
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic02-b/book-b-donation-03/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Donation-03
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic03-a/book-a-solutions-donation-03/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Donation-03-Solutions
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic03-a/book-b-myrent-00-Baseline/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-00 (Baseline)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic03-a/book-c-myrent-01-Widgets/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-01 (Widgets)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic03-b/book-a-myrent-02-Listview/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-02 (Listview)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic03-b/book-b-event-handling/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Event-Handling
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic04-a/book-a-myrent-03-Action-Bar-Dialogs/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-03 (Action Bar & Dialogs)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic04-a/book-b-myrent-04-fileIO/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-04 (FileIO)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic04-b/book-a-myrent-05-Up-Button/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-05 (Up Button)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic04-b/book-b-java-8/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lambda Expressions
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic04-b/book-c-event-handler-soln/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Event-Handling-Solution
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic05-a/book-a-myrent-06-Contact-Email/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-06 (Contact & Email)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic05-a/book-b-permissions/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-06a (Permissions)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic05-b/book-a-myrent-07-Fragments/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-07 (Fragments)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic05-b/book-b-twopane/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Two Pane
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic06-a/book-a-myrent-08-Deletion/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-08 (Deletion)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic06-a/book-b-myrent-09-Viewpager/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-09 (ViewPager)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic06-b/book-a-settings/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-10 (Settings)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic07-a/book-a-myrent-10-Maps-Google/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-11 (Maps - Google)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic07-a/book-b-myrent-10-Maps-MapBox/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-11a (Maps - MapBox)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic07-b/book-a-myrent-sqlite-SQLite/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRentSQLite (SQLite)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic08-a/book-a-myrent-12-SQLite/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-12 (SQLite)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic08-b/book-b-myrent-sqlite-ContentProvider/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRentSQLite (ContentProvider)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic09-a/book-a-myrent-service/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent (Play Service)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic09-a/book-a-myrent-service-test/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent (JUnit Test)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic09-a/book-b-myrent-14-Retrofit-Client/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-13 (Client)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic10-a/book-b-services/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-14 (Services)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic11-a/book-a-myrent-11-Camera/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-15 (Camera)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic11-b/book-a-crypto/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+App Signing & Crypto
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic11-c/book-a-myrent-16-Mongo/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-16 (Mongo)
+                </a>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>9-a: Client-Service </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">MyRent (Play Service)</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
+<p>Here we implement an API. It comprises a set of routes (the end points), controllers for these routes together with the means of translating Java objects to and from the Json format.</p>
+</li>
+        
+          <li> <h1>Model class</h1>
+<p>Using Play framework, create a new project: <code>myrent-service-2016</code>.</p>
+<p>Generate an Eclipse view of the project:</p>
+<pre><code>cd myrent-service-2016
+play deps
+play eclipsify</code></pre>
+<p>Launch Eclipse and open (or create) a suitable workspace. </p>
+<p>Then, import the project.</p>
+<p>In a <code>models</code> package, add this class:</p>
+<pre><code>package models;
+
+import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.UUID;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import play.db.jpa.GenericModel;
+
+@Entity
+public class Residence extends GenericModel {
+
+  @Id
+  public Long id;
+  public String geolocation;
+  public Long date;
+  public boolean rented;
+  public String tenant;
+  public double zoom;
+  public String photo;
+
+  public Residence() {
+    id = unsignedLong();
+    geolocation = &quot;&quot;;
+    date = 0L;
+    rented = false;
+    tenant = &quot;&quot;;
+    zoom = 0;
+    photo = &quot;&quot;;
+  }
+
+  public static Residence findById(Long id) {
+    return find(&quot;id&quot;, id).first();
+  }
+
+  /**
+   * Generate a long greater than zero
+   * 
+   * @return Unsigned Long value greater than zero
+   */
+  private Long unsignedLong() {
+    long rndVal = 0;
+    do {
+      rndVal = new Random().nextLong();
+    } while (rndVal &lt;= 0);
+    return rndVal;
+  }
+}</code></pre>
+</li>
+        
+          <li> <h1>Utils - GsonBinder</h1>
+<p>Create a new package called <code>utils</code>. Create this class in <code>utils</code>.</p>
+<pre><code>
+package utils;
+
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Type;
+
+import play.data.binding.Global;
+import play.data.binding.TypeBinder;
+
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+
+@Global
+public class GsonBinder implements TypeBinder&lt;JsonElement&gt;
+{
+  public Object bind(String name, Annotation[] notes, String value, Class toClass, Type toType) throws Exception
+  {
+    return new JsonParser().parse(value);
+  }
+}</code></pre>
+</li>
+        
+          <li> <h1>ResidencesAPI</h1>
+<p>In the controllers package add a class <code>ResidencesAPI</code>:</p>
+<pre><code>
+package controllers;
+
+import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+
+import models.Residence;
+import play.mvc.Controller;
+
+public class ResidencesAPI extends Controller {
+
+  static Gson gson = new GsonBuilder().create();
+
+  /**
+   * 
+   * @param id
+   * @param body
+   */
+  public static void createResidence(JsonElement body) {
+    Residence residence = gson.fromJson(body.toString(), Residence.class);
+    residence.save();
+    renderJSON(gson.toJson(residence));
+  }
+
+  /**
+   * This is an update and differs from createResidence in that the primary key
+   * (id) is used to retrieve the original residence which is then deleted and
+   * its place taken by the incoming modified residence.
+   * 
+   * @param body
+   *          The modified residence
+   */
+  public static void updateResidence(JsonElement body) {
+    Residence modifiedResidence = gson.fromJson(body.toString(), Residence.class);
+    Residence residence = Residence.findById(modifiedResidence.id);
+    if (residence != null) {
+      modifiedResidence.id = residence.id;
+      residence.delete();
+      modifiedResidence.save();
+      renderJSON(gson.toJson(modifiedResidence));
+    } else {
+      notFound();
+    }
+
+  }
+
+  public static void getResidence(Long id) {
+    Residence residence = Residence.findById(id);
+    if (residence == null) {
+      notFound();
+    } else {
+      renderJSON(gson.toJson(residence));
+    }
+  }
+
+  public static void getResidences() {
+    List&lt;Residence&gt; residences = Residence.findAll();
+    renderJSON(gson.toJson(residences));
+  }
+
+  /**
+   * 
+   * @param id
+   * @param residenceId
+   */
+  public static void deleteResidence(Long id) {
+    Residence residence = Residence.findById(id);
+    if (residence == null) {
+      notFound();
+    } else {
+      residence.delete();
+      renderText(&quot;success&quot;);
+    }
+  }
+
+}</code></pre>
+</li>
+        
+          <li> <h1>Configuration</h1>
+<p>Enable our in-memory database by uncommenting the usual setting in &#39;application.conf&#39;</p>
+<pre><code>db.default=mem</code></pre>
+<p>Introduce the &#39;Bootstrap&#39; java class directly into the &#39;app&#39; folder:</p>
+<pre><code>import java.util.List;
+
+import play.jobs.*;
+import play.test.*;
+import models.*;
+
+@OnApplicationStart
+public class Bootstrap extends Job 
+{ 
+  public void doJob()
+  {
+    if (Residence.count() == 0)
+    {
+     Fixtures.deleteDatabase(); 
+     Fixtures.loadModels(&quot;data.yml&quot;);
+    }
+  }
+}</code></pre>
+<p><strong>Important:</strong> once this service app has been completed and tested, comment out the above <code>doJob</code> method <code>before</code> running the JUnit tests. Otherwise the tests will likely fail as the expected number of records in the database will differ from that expected in the test code.</p>
+<p>Now, specify additional routs in <code>config/routes</code> file. Here is the complete version:</p>
+<pre><code>
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+
+# Residence
+POST    /api/residence                                 ResidencesAPI.createResidence
+GET     /api/residences                                ResidencesAPI.getResidences
+GET     /api/residences/{id}                           ResidencesAPI.getResidence
+DELETE  /api/residences/{id}                           ResidencesAPI.deleteResidence
+POST    /api/residence/update                          ResidencesAPI.updateResidence
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}</code></pre>
+<p>Provide some sample data.</p>
+<pre><code>
+Residence(residence_1):
+  id: 1234
+  geolocation: &quot;52.258136,-7.127810&quot;
+  date: 1448196498688
+  rented: true
+  tenant: Homer
+  zoom: 12.0
+  photo: &quot;photo 1&quot;
+
+Residence(residence_2):
+  id: 1235
+  geolocation: &quot;53.258136,-7.127810&quot;
+  date: 1448196498765
+  rented: true
+  tenant: Barney
+  zoom: 14.0
+  photo: &quot;photo 2&quot;
+
+Residence(residence_3):
+  id: 1236
+  geolocation: &quot;52.258136,-8.127810&quot;
+  date: 1448196498999
+  rented: true
+  tenant: Marge
+  zoom: 16.0
+  photo: &quot;photo 3&quot;
+
+Residence(residence_4):
+  id: 1237
+  geolocation: &quot;52.258136,-7.127810&quot;
+  date: 1448196498666
+  rented: true
+  tenant: Lisa
+  zoom: 18.0
+  photo: &quot;photo 4&quot;</code></pre>
+</li>
+        
+          <li> <h1>Exploring that API</h1>
+<p>The program should now build without error. Launch it and browse to the database and study the contents:</p>
+<pre><code>
+localhost:9000/@db</code></pre>
+<p>If you are having difficulty launching the h2 browser with the above command, use Postman.</p>
+<p>Also, in a browser explore the urls:</p>
+<pre><code>http://localhost:9000/api/residences</code></pre>
+<p><img src="img/01.png" alt="Figure 1: http://localhost:9000/api/residences"></p>
+<pre><code>http://localhost:9000/api/residences</code></pre>
+<p><img src="img/02.png" alt="Figure 2: http://localhost:9000/api/residences/1234"></p>
+<h2>Postman</h2>
+<p>Launch Postman from within Chrome:</p>
+<p><img src="img/03.png" alt="Figure 3: Postman accessible within Chrome apps"></p>
+<p>Explore the GET and DELETE HTTP commands. Here in Figure 4 is an example of the use of GET.</p>
+<p><img src="img/04.png" alt="Figure 4: Postman - GET localhost:9000/api/residences/1234"></p>
+</li>
+        
+          <li> <h1>Exercises:</h1>
+<p>Using Postman:</p>
+<ol>
+<li><p>Create a JSON version of a Residence object and POST it.</p>
+</li>
+<li><p>Delete a Residence object.</p>
+</li>
+<li><p>Update a Residence object.</p>
+</li>
+</ol>
+</li>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertAfter($images[i]);
+      $('<br>').insertAfter($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

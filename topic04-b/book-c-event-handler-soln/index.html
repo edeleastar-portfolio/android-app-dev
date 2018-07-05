@@ -1,0 +1,673 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <style>
+    
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+  </style>
+
+  <body class="lab">
+
+    
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-usage" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav">
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic01/book-a-donation-01/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Donation-01
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic02-a/book-a-donation-02/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Donation-02
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic02-b/book-b-donation-03/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Donation-03
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic03-a/book-a-solutions-donation-03/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Donation-03-Solutions
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic03-a/book-b-myrent-00-Baseline/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-00 (Baseline)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic03-a/book-c-myrent-01-Widgets/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-01 (Widgets)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic03-b/book-a-myrent-02-Listview/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-02 (Listview)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic03-b/book-b-event-handling/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Event-Handling
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic04-a/book-a-myrent-03-Action-Bar-Dialogs/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-03 (Action Bar & Dialogs)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic04-a/book-b-myrent-04-fileIO/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-04 (FileIO)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic04-b/book-a-myrent-05-Up-Button/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-05 (Up Button)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic04-b/book-b-java-8/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lambda Expressions
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic04-b/book-c-event-handler-soln/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Event-Handling-Solution
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic05-a/book-a-myrent-06-Contact-Email/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-06 (Contact & Email)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic05-a/book-b-permissions/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-06a (Permissions)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic05-b/book-a-myrent-07-Fragments/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-07 (Fragments)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic05-b/book-b-twopane/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Two Pane
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic06-a/book-a-myrent-08-Deletion/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-08 (Deletion)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic06-a/book-b-myrent-09-Viewpager/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-09 (ViewPager)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic06-b/book-a-settings/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-10 (Settings)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic07-a/book-a-myrent-10-Maps-Google/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-11 (Maps - Google)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic07-a/book-b-myrent-10-Maps-MapBox/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-11a (Maps - MapBox)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic07-b/book-a-myrent-sqlite-SQLite/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRentSQLite (SQLite)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic08-a/book-a-myrent-12-SQLite/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-12 (SQLite)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic08-b/book-b-myrent-sqlite-ContentProvider/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRentSQLite (ContentProvider)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic09-a/book-a-myrent-service/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent (Play Service)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic09-a/book-a-myrent-service-test/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent (JUnit Test)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic09-a/book-b-myrent-14-Retrofit-Client/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-13 (Client)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic10-a/book-b-services/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-14 (Services)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic11-a/book-a-myrent-11-Camera/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-15 (Camera)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic11-b/book-a-crypto/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+App Signing & Crypto
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic11-c/book-a-myrent-16-Mongo/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-16 (Mongo)
+                </a>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>4-b: Navigation (Up button) & Lambda Expressions </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Event-Handling-Solution</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">Archives</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Event handling solution</h1>
+<p>This is a solution to the event handling lab.</p>
+</li>
+        
+          <li> <h1>Exercise 1</h1>
+<p>Modify the the Delegate callback method as follows:</p>
+<ul>
+<li>Introduce a new interface, KeyBoardListener, inherited from the existing interface TextWatcher.<ul>
+<li>The interface to have one method: <strong>void onKeyBoardInput()</strong></li>
+</ul>
+</li>
+<li>Introduce a new class called KeyPress, a subclass of TextView<ul>
+<li>In Keypress, override the TextView method <em>doWork</em> as indicated below.</li>
+</ul>
+</li>
+<li>Modify EventLoop as follows:<ul>
+<li>The class should implement the new interface only</li>
+<li>Rather than TextView textview being an instance of TextView, have it be an instance of the derived class Keypress.</li>
+<li>In the simulated event loop capture a character from a keyboard press.<ul>
+<li>If the character is &quot;c&quot;:<ul>
+<li>Set the predicate <em>true</em>.</li>
+<li>Implement the necessary interface method(s).</li>
+</ul>
+</li>
+<li>If the character is &quot;q&quot;, quit the program.</li>
+</ul>
+</li>
+<li>Here is sample output:
+<img src="img/13.png" alt=""><ul>
+<li>EventLoop is provided in skeleton form below.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Here is the package and file arrangement you are recommended to use:</p>
+<ul>
+<li>Create a new package <strong>org.wit.callbackexercise</strong>.<ul>
+<li>Populate this package with <ul>
+<li>Two new classes:<ul>
+<li>EventLoop</li>
+<li>Keypress</li>
+</ul>
+</li>
+<li>One new interface<ul>
+<li>KeyBoardListener</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Here is skeleton code for EventLoop class with hints </p>
+<pre><code>package org.wit.callbackexercise;
+
+import java.util.Scanner;
+
+import org.wit.callback.TextView;
+
+//Class to simulate a short-lived event loop
+public class EventLoop 
+{
+  String keyboardInput;
+  static Scanner in = new Scanner(System.in);
+
+  public void runloop()
+  {
+    TextView textview = new Keypress();
+    // EventLoop implements KeyBoardListener
+    // Consequently &quot;this&quot; a legal parameter here
+    textview.addTextChangedListener(...);
+    // The simulated event loop
+    do
+    {
+      keyboardInput = keyboard();
+      if (keyboardInput.equals(&quot;c&quot;))
+      {
+        textview.setPredicate(true); // the trigger to fire an event
+      }
+      textview.doWork();//if predicate true then trigger event in doWork
+    } while (keyboardInput.equals(&quot;q&quot;) == false);
+    System.out.println(&quot;Thanks for your time - bye&quot;);
+  }
+
+  /*
+   * Capture and return a single keyboard character
+   */
+  public String keyboard()
+  {
+    String s = &quot;&quot;;
+    if(in.hasNext())
+    {
+      s = in.next();
+    }
+    return s;
+  }
+
+  public static void main(String[] args)
+  {
+    EventLoop obj = new EventLoop();
+    obj.runloop();
+    in.close();
+  }
+}</code></pre>
+<p>Here is a skeleton of the derived Keypress class:</p>
+<pre><code>package org.wit.callbackexercise;
+
+import org.wit.callback.TextView;
+
+public class Keypress extends TextView
+{
+  public void addKeyBoardListener(KeyBoardListener listener)
+  {
+    // Save the event object for later use.
+    //TODO ...
+  }
+
+  // This method will be invoked repeatedly in an event loop
+  @Override
+  public void doWork()
+  {
+    // Check the predicate, which is set elsewhere.
+    if (somethingHappened)
+    {
+      // Signal the event by invoking the interface&#39;s method.
+      //TODO: Invoke: onKeyBoardInput();
+      //TODO: Invoke: onTextChanged(&quot;Finally - you called back&quot;);
+      somethingHappened = false;
+    }
+  }
+}</code></pre>
+<p>Here are suggested class diagrams for the solution.</p>
+<p><img src="img/14.png" alt=""></p>
+</li>
+        
+          <li> <h1>Exercise 1 Solution</h1>
+<p>Create a new package <strong>org.wit.callbackexercise</strong> in the project <strong>event_handling</strong>.</p>
+<ul>
+<li>Add a KeyBoardListener interface.</li>
+</ul>
+<h2>KeyBoardListener</h2>
+<p>Here is the specified listener:</p>
+<pre><code>package org.wit.callbackexercise;
+
+import org.wit.callback.TextWatcher;
+
+public interface KeyBoardListener extends TextWatcher
+{
+  void onKeyBoardInput();
+}</code></pre>
+<h2>EventLoop</h2>
+<p>Modify <em>org.wit.callbackexercise.EventLoop.java</em>:</p>
+<ul>
+<li>Have EventLoop implement KeyBoardListener:</li>
+</ul>
+<pre><code>public class EventLoop implements  KeyBoardListener</code></pre>
+<ul>
+<li>Add the necessary import statement:<ul>
+<li>import org.wit.callback.TextWatcher;</li>
+</ul>
+</li>
+<li>Implement the required override methods:</li>
+</ul>
+<pre><code>  @Override
+  public void onKeyBoardInput()
+  {
+    System.out.println(&quot;Keyboard input: &quot; + keyboardInput);   
+  }
+
+  @Override
+  public void onTextChanged(String changedtext)
+  {
+    System.out.println(&quot;Finally - you called back&quot;);
+  }</code></pre>
+<ul>
+<li>In EventLoop register a reference to the object whose class implements listener, namely <strong>this</strong>:</li>
+</ul>
+<pre><code>textview.addTextChangedListener(this);</code></pre>
+<h2>KeyPress</h2>
+<p>Complete the skeleton code provided: <em>org.wit.callbackexercise.Keypress.java</em>:</p>
+<ul>
+<li>Save the object for later use:</li>
+</ul>
+<pre><code>  public void addKeyBoardListener(KeyBoardListener listener)
+  {
+    super.textwatcher = listener;
+  }</code></pre>
+<p>In <em>doWork()</em>:</p>
+<ul>
+<li>Invoke onKeyBoardInput()</li>
+</ul>
+<pre><code>((KeyBoardListener)textwatcher).onKeyBoardInput();</code></pre>
+<ul>
+<li>Invoke onTextChanged</li>
+</ul>
+<pre><code>textwatcher.onTextChanged(&quot;Finally - you called back&quot;);</code></pre>
+<p>Here is the complete method:</p>
+<pre><code>  @Override
+  public void doWork()
+  {
+    // Check the predicate, which is set elsewhere.
+    if (somethingHappened)
+    {
+      // Signal the event by invoking the interface&#39;s method.
+      ((KeyBoardListener)textwatcher).onKeyBoardInput();
+      textwatcher.onTextChanged(&quot;Finally - you called back&quot;);
+      somethingHappened = false;
+    }
+  }</code></pre>
+<p>We need to make a change to some of the existing code, namely <em>org.wit.callback.TextView</em>:</p>
+<ul>
+<li>Note that in KeyPress we require access to the super class TextView<ul>
+<li>TextWatcher textwatcher</li>
+<li>boolean somethingHappened</li>
+</ul>
+</li>
+</ul>
+<p>We can do this in any of the following ways:</p>
+<ul>
+<li>Declare both fields <em>public</em></li>
+<li>Introduce <em>getter</em> methods </li>
+<li>Declare both fields <em>protected</em>.</li>
+</ul>
+<p>Change the fields to protected:</p>
+<pre><code>  protected TextWatcher textwatcher;
+  protected boolean somethingHappened;</code></pre>
+<p>The code should now be error-free.</p>
+<p>Test as follows:</p>
+<ul>
+<li>In the Package Explorer select <em>org.wit.callbackexercise.EventLoop.java</em><ul>
+<li>Run as Java Application</li>
+<li>Bring the console window into focus by placing the mouse cursor anywhere within it and pressing the left mouse button.</li>
+<li>Type the lower case character <strong>c</strong> and press return.</li>
+<li>You should see this:
+<img src="img/01.png" alt=""></li>
+<li>Repeat a number of times. </li>
+<li>The same output should be repeated.</li>
+<li>To quit enter the lower case character <strong>q</strong>.
+<img src="img/02.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<p>A complete project containing the solution may be downloaded using a link in the next step.</p>
+</li>
+        
+          <li> <h1>Archives</h1>
+<p>This is downloadable archive of the solution event handling code:</p>
+<ul>
+<li><a href="archives/event_handling_solution.zip">Event_handling</a></li>
+</ul>
+</li>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertAfter($images[i]);
+      $('<br>').insertAfter($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

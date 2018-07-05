@@ -1,0 +1,590 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <style>
+    
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+  </style>
+
+  <body class="lab">
+
+    
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-usage" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav">
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic01/book-a-donation-01/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Donation-01
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic02-a/book-a-donation-02/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Donation-02
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic02-b/book-b-donation-03/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Donation-03
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic03-a/book-a-solutions-donation-03/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Donation-03-Solutions
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic03-a/book-b-myrent-00-Baseline/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-00 (Baseline)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic03-a/book-c-myrent-01-Widgets/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-01 (Widgets)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic03-b/book-a-myrent-02-Listview/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-02 (Listview)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic03-b/book-b-event-handling/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Event-Handling
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic04-a/book-a-myrent-03-Action-Bar-Dialogs/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-03 (Action Bar & Dialogs)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic04-a/book-b-myrent-04-fileIO/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-04 (FileIO)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic04-b/book-a-myrent-05-Up-Button/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-05 (Up Button)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic04-b/book-b-java-8/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lambda Expressions
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic04-b/book-c-event-handler-soln/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Event-Handling-Solution
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic05-a/book-a-myrent-06-Contact-Email/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-06 (Contact & Email)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic05-a/book-b-permissions/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-06a (Permissions)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic05-b/book-a-myrent-07-Fragments/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-07 (Fragments)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic05-b/book-b-twopane/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Two Pane
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic06-a/book-a-myrent-08-Deletion/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-08 (Deletion)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic06-a/book-b-myrent-09-Viewpager/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-09 (ViewPager)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic06-b/book-a-settings/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-10 (Settings)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic07-a/book-a-myrent-10-Maps-Google/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-11 (Maps - Google)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic07-a/book-b-myrent-10-Maps-MapBox/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-11a (Maps - MapBox)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic07-b/book-a-myrent-sqlite-SQLite/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRentSQLite (SQLite)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic08-a/book-a-myrent-12-SQLite/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-12 (SQLite)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic08-b/book-b-myrent-sqlite-ContentProvider/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRentSQLite (ContentProvider)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic09-a/book-a-myrent-service/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent (Play Service)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic09-a/book-a-myrent-service-test/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent (JUnit Test)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic09-a/book-b-myrent-14-Retrofit-Client/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-13 (Client)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic10-a/book-b-services/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-14 (Services)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic11-a/book-a-myrent-11-Camera/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-15 (Camera)
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic11-b/book-a-crypto/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+App Signing & Crypto
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="https://edeleastar-portfolio.github.io//web-app-dev-java//topic11-c/book-a-myrent-16-Mongo/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+MyRent-16 (Mongo)
+                </a>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>5-a: Persistence & Communication </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">MyRent-06a (Permissions)</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Contact list &amp; Email support</h1>
+<p>Supplementary MyRent lab to demonstrate how to request permissions at run time. We restrict ourselves to the single permission READ_CONTACTS. We consider two scenarios: activity-fragment and viewpager-fragment.</p>
+</li>
+        
+          <li> <h1>Gradle</h1>
+<p>Add the following dependency to <code>build.gradle (Modlule: app)</code>:</p>
+<pre><code>      compile &quot;com.android.support:support-v13:23.4.0&quot;</code></pre>
+<p>The FragmentCompat class, which we shall be using shortly, requires this library.</p>
+<p>Your complete gradle file might look something like this (with the appropriate applicationId):</p>
+<pre><code>
+apply plugin: &#39;com.android.application&#39;
+
+android {
+  compileSdkVersion 23
+  buildToolsVersion &quot;23.0.3&quot;
+
+  defaultConfig {
+    applicationId &quot;org.wit.myrent&quot;
+    minSdkVersion 19
+    targetSdkVersion 23
+    versionCode 1
+    versionName &quot;1.0&quot;
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile(&#39;proguard-android.txt&#39;), &#39;proguard-rules.pro&#39;
+    }
+  }
+}
+
+dependencies {
+  compile fileTree(dir: &#39;libs&#39;, include: [&#39;*.jar&#39;])
+  testCompile &#39;junit:junit:4.12&#39;
+  compile &#39;com.android.support:appcompat-v7:23.4.0&#39;
+  compile &quot;com.android.support:support-v13:23.4.0&quot;
+}</code></pre>
+</li>
+        
+          <li> <h1>ResidenceFragment code</h1>
+<p>This code will work for both the ViewPager-Fragment and Activity-Fragment situations.</p>
+<p>Introduce a new field for the intent data. </p>
+<pre><code>// This field is initialized in `onActivityResult`.
+Intent data:</code></pre>
+<p>This field is required to provide us with access to the data intent outside the method <code>onActivityResult</code>.</p>
+<pre><code>
+  @Override
+  public void onClick(View v)
+  {
+    switch (v.getId())
+    {
+     ...
+     ...
+
+      case R.id.tenant :
+        Intent i = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+        startActivityForResult(i, REQUEST_CONTACT);
+        break;
+
+      case R.id.residence_reportButton :
+        if(emailAddress == null) emailAddress = &quot;&quot;; // guard against null pointer
+        sendEmail(getActivity(), emailAddress, getString(R.string.residence_report_subject), residence.getResidenceReport(getActivity()));
+        break;
+
+    }</code></pre>
+<pre><code>  @Override
+  public void onActivityResult(int requestCode, int resultCode, Intent data)
+  {
+    switch (requestCode) {
+      case REQUEST_CONTACT:
+        this.data = data;
+        checkContactsReadPermission();
+        break;
+    }
+  }
+
+  private void readContact() {
+    String name = ContactHelper.getContact(getActivity(), data);
+    emailAddress = ContactHelper.getEmail(getActivity(), data);
+    tenantButton.setText(name + &quot; : &quot; + emailAddress);
+    residence.tenant = name;
+  }
+`</code></pre>
+<pre><code>  /**
+   * http://stackoverflow.com/questions/32714787/android-m-permissions-onrequestpermissionsresult-not-being-called
+   * This is an override of FragmentCompat.onRequestPermissionsResult
+   *
+   * @param requestCode Example REQUEST_CONTACT
+   * @param permissions String array of permissions requested.
+   * @param grantResults int array of results for permissions request.
+   */
+  @Override
+  public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    switch (requestCode) {
+      case REQUEST_CONTACT: {
+        // If request is cancelled, the result arrays are empty.
+        if (grantResults.length &gt; 0 &amp;&amp; grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+          readContact();
+        }
+        break;
+      }
+    }
+  }
+
+  /**
+   * Bespoke method to check if read contacts permission exists.
+   * If it exists then the contact sought is read.
+   * Otherwise, the method FragmentCompat.request permissions is invoked and
+   * The response is via the callback onRequestPermissionsResult.
+   * In onRequestPermissionsResult, on successfully being granted permission then the sought contact is read.
+   */
+  private void checkContactsReadPermission() {
+    if (ContextCompat.checkSelfPermission(getActivity(),
+        Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED) {
+
+      readContact();
+    }
+    else {
+      // Invoke callback to request user-granted permission
+      FragmentCompat.requestPermissions(
+          this,
+          new String[]{Manifest.permission.READ_CONTACTS},
+          REQUEST_CONTACT);
+    }
+  }</code></pre>
+<p>These import statements are required:</p>
+<pre><code>import android.support.v13.app.FragmentCompat;
+import android.support.v4.content.ContextCompat;
+import android.Manifest;
+import android.content.pm.PackageManager;</code></pre>
+<p>Replace the existing Fragment import with the following:</p>
+<pre><code>import android.app.Fragment;</code></pre>
+</li>
+        
+          <li> <h1>Activity-Fragment</h1>
+<p>Activity class: example ResidenceActivity.</p>
+<p>Replace:</p>
+<pre><code>
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;</code></pre>
+<p>with:</p>
+<pre><code>import android.app.Fragment;
+import android.app.FragmentManager;</code></pre>
+<p>Replace:</p>
+<pre><code>        FragmentManager manager = getSupportFragmentManager();</code></pre>
+<p>with:</p>
+<pre><code>        FragmentManager manager = getFragmentManager();</code></pre>
+</li>
+        
+          <li> <h1>ViewPager-Fragment</h1>
+<p>ViewPager class: example ResidencePagerActivity</p>
+<p>Replace:</p>
+<pre><code>
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;</code></pre>
+<p>with:</p>
+<pre><code>import android.app.Fragment;
+import android.app.FragmentManager;
+import android.support.v13.app.FragmentStatePagerAdapter;</code></pre>
+<p>Replace:</p>
+<pre><code>            pagerAdapter = new PagerAdapter(getSupportFragmentManager(), residences);</code></pre>
+<p>with:</p>
+<pre><code>            pagerAdapter = new PagerAdapter(getFragmentManager(), residences);</code></pre>
+</li>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      divLabel.append($images[i].alt);
+      $(divLabel).insertAfter($images[i]);
+      $('<br>').insertAfter($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>
