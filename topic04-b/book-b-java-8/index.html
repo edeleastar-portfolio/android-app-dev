@@ -1,23 +1,27 @@
-
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+        type="text/css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+        rel="stylesheet"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <style>
     
 
@@ -63,360 +67,244 @@ h3 {
 
 
   </style>
+</head>
 
-  <body class="lab">
+<body>
 
+
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
     
-  <div class="uk-offcanvas-content">
-    <div id="offcanvas-usage" uk-offcanvas>
-      <div class="uk-offcanvas-bar">
-        <button class="uk-offcanvas-close" type="button" uk-close></button>
-        <ul class="uk-nav">
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic01/book-a-donation-01/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Donation-01
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-a/book-a-donation-02/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Donation-02
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-b/book-b-donation-03/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Donation-03
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-a-solutions-donation-03/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Donation-03-Solutions
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-b-myrent-00-Baseline/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-00 (Baseline)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-c-myrent-01-Widgets/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-01 (Widgets)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-a-myrent-02-Listview/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-02 (Listview)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-b-event-handling/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Event-Handling
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-a-myrent-03-Action-Bar-Dialogs/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-03 (Action Bar & Dialogs)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-b-myrent-04-fileIO/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-04 (FileIO)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-a-myrent-05-Up-Button/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-05 (Up Button)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-b-java-8/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lambda Expressions
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-c-event-handler-soln/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Event-Handling-Solution
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-a-myrent-06-Contact-Email/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-06 (Contact & Email)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-b-permissions/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-06a (Permissions)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-a-myrent-07-Fragments/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-07 (Fragments)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-b-twopane/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Two Pane
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-a-myrent-08-Deletion/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-08 (Deletion)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-b-myrent-09-Viewpager/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-09 (ViewPager)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-b/book-a-settings/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-10 (Settings)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-a-myrent-10-Maps-Google/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-11 (Maps - Google)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-b-myrent-10-Maps-MapBox/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-11a (Maps - MapBox)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-b/book-a-myrent-sqlite-SQLite/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRentSQLite (SQLite)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-a/book-a-myrent-12-SQLite/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-12 (SQLite)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-b/book-b-myrent-sqlite-ContentProvider/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRentSQLite (ContentProvider)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent (Play Service)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service-test/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent (JUnit Test)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-b-myrent-14-Retrofit-Client/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-13 (Client)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic10-a/book-b-services/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-14 (Services)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-a/book-a-myrent-11-Camera/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-15 (Camera)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-b/book-a-crypto/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-App Signing & Crypto
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-c/book-a-myrent-16-Mongo/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-16 (Mongo)
-                </a>
-              </li>
-            
-          
-        </ul>
-      </div>
-    </div>
+      <a href="../index.html"> 4-b: Navigation (Up button) & Lambda Expressions  </a>
+    
+  </header>
+  <div class="right tab-menu menu">
+    
+      <a class="item" data-tab="Lambda Expressions">
+        Lambda Expressions
+      </a>
+    
+      <a class="item" data-tab="01">
+        01
+      </a>
+    
+      <a class="item" data-tab="02">
+        02
+      </a>
+    
+      <a class="item" data-tab="03">
+        03
+      </a>
+    
+      <a class="item" data-tab="04">
+        04
+      </a>
+    
+      <a class="item" data-tab="05">
+        05
+      </a>
+    
+      <a class="item" data-tab="06">
+        06
+      </a>
+    
+      <a class="item" data-tab="07">
+        07
+      </a>
+    
+      <a class="item" data-tab="08">
+        08
+      </a>
+    
   </div>
+</div>
 
-
-    <div uk-sticky>
-      <nav class="uk-navbar">
-        <div class="uk-navbar-left">
-          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
-                   uk-tooltip></a></li>
-            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
-                                     pos="bottom" uk-tooltip>4-b: Navigation (Up button) & Lambda Expressions </a></li>
-          </ul>
-        </div>
-        <div class="uk-navbar-right">
-          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
-              uk-switcher="connect: .switcher-container">
-            
-              <li><a href="#">Lambda Expressions</a></li>
-            
-              <li><a href="#">01</a></li>
-            
-              <li><a href="#">02</a></li>
-            
-              <li><a href="#">03</a></li>
-            
-              <li><a href="#">04</a></li>
-            
-              <li><a href="#">05</a></li>
-            
-              <li><a href="#">06</a></li>
-            
-              <li><a href="#">07</a></li>
-            
-              <li><a href="#">08</a></li>
-            
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-    <div class="uk-container uk-container-expand">
-      <ul class="uk-switcher switcher-container">
-        
-          <li> <h1>Java 8 Lambdas</h1>
+<div class="ui pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic01/book-a-donation-01/index.html">Donation-01 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-a/book-a-donation-02/index.html">Donation-02 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-b/book-b-donation-03/index.html">Donation-03 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-a-solutions-donation-03/index.html">Donation-03-Solutions </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-b-myrent-00-Baseline/index.html">MyRent-00 (Baseline) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-c-myrent-01-Widgets/index.html">MyRent-01 (Widgets) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-a-myrent-02-Listview/index.html">MyRent-02 (Listview) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-b-event-handling/index.html">Event-Handling </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-a-myrent-03-Action-Bar-Dialogs/index.html">MyRent-03 (Action Bar & Dialogs) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-b-myrent-04-fileIO/index.html">MyRent-04 (FileIO) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-a-myrent-05-Up-Button/index.html">MyRent-05 (Up Button) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-b-java-8/index.html">Lambda Expressions </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-c-event-handler-soln/index.html">Event-Handling-Solution </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-a-myrent-06-Contact-Email/index.html">MyRent-06 (Contact & Email) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-b-permissions/index.html">MyRent-06a (Permissions) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-a-myrent-07-Fragments/index.html">MyRent-07 (Fragments) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-b-twopane/index.html">Two Pane </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-a-myrent-08-Deletion/index.html">MyRent-08 (Deletion) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-b-myrent-09-Viewpager/index.html">MyRent-09 (ViewPager) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-b/book-a-settings/index.html">MyRent-10 (Settings) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-a-myrent-10-Maps-Google/index.html">MyRent-11 (Maps - Google) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-b-myrent-10-Maps-MapBox/index.html">MyRent-11a (Maps - MapBox) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-b/book-a-myrent-sqlite-SQLite/index.html">MyRentSQLite (SQLite) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-a/book-a-myrent-12-SQLite/index.html">MyRent-12 (SQLite) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-b/book-b-myrent-sqlite-ContentProvider/index.html">MyRentSQLite (ContentProvider) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service/index.html">MyRent (Play Service) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service-test/index.html">MyRent (JUnit Test) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-b-myrent-14-Retrofit-Client/index.html">MyRent-13 (Client) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic10-a/book-b-services/index.html">MyRent-14 (Services) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-a/book-a-myrent-11-Camera/index.html">MyRent-15 (Camera) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-b/book-a-crypto/index.html">App Signing & Crypto </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-c/book-a-myrent-16-Mongo/index.html">MyRent-16 (Mongo) </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment">
+      <br>
+      
+        <div class="ui tab segment lab" data-tab="Lambda Expressions">
+          <h1>Java 8 Lambdas</h1>
 <p>Java 8, initially released in March 2014, is a major upgrade providing many new features one of which we examine here, namely <code>lambda expressions</code>. We consider situations where such expressions may be used to provide a less verbose alternatitive to anonymous classes.</p>
-</li>
-        
-          <li> <h1>Introduction Java 8</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="01">
+          <h1>Introduction Java 8</h1>
 <p>The new features introduced to the Java Language are described in the official documentation <a href="http://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html">What&#39;s New in JDK 8</a>.</p>
 <p>We shall examine the use of lambda expressions as a means of replacing certain anonymous classes. This includes a look at the changes to the <a href="https://docs.oracle.com/javase/tutorial/java/IandI/interfaceDef.html">Java interface type</a> where constant declarations and default and static methods are now permitted, in addition to existing abstract method declarations. We shall also explain what is meant by functional interfaces and explore what exactly is meant by an anonymous class. A simple Java application is progressively developed as part of the lab.</p>
-</li>
-        
-          <li> <h1>Interface (Java 7)</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="02">
+          <h1>Interface (Java 7)</h1>
 <p>Using Eclipse IDE or equivalent create a Java project named <code>java8</code>. Create a package <code>interfaces</code> in this project. We shall introduce an interface <code>TextWatcher</code>, a class named <code>ResidenceActivity</code> that implements TextWatcher and a class <code>MyRentApp</code> containing a <code>main</code> method to run the application. The starter code is provided below. </p>
 <pre><code>package interfaces;
 
@@ -458,9 +346,11 @@ public class ResidenceActivity implements TextWatcher {
 }</code></pre>
 <p>Run the app. The output displayed in the console should resemble that shown in Figure 4.
 <img src="img/01.png" alt="Figure 4: Output on running app"></p>
-</li>
-        
-          <li> <h1>Interface (Java 8)</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="03">
+          <h1>Interface (Java 8)</h1>
 <p>The <a href="https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html">official documentation</a> defines an interface as follows:</p>
 <ul>
 <li>In the Java programming language, an interface is a reference type, similar to a class, that can contain only constants, method signatures, default methods, static methods, and nested types.</li>
@@ -631,9 +521,11 @@ public class MyRentApp {
   }
 
 }</code></pre>
-</li>
-        
-          <li> <h1>Anonymous class</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="04">
+          <h1>Anonymous class</h1>
 <p>We shall lead in to demonstrating use of a lambda by first describing an anonymous class and then in the next step introducing <code>functional interfaces</code>. We will then be in a position to replace the anonymous class, the subject of our demo, with a lambda.</p>
 <p>Some changes are required to the application as follows:</p>
 <ul>
@@ -712,9 +604,11 @@ public class TextView
   }</code></pre>
 <p>What is referred to as anonymous class is highlighted in blue in Figure 1 here. What takes place transparent to the user is that a synthetic class is created and this class implements the TextWatcher interface. An object of the class is then created, a reference to which is passed as a parameter to the method <code>TextView.addTextChangedListener</code>. This object satisfies the typing requirement of the parameter, namely TextWatcher.</p>
 <p><img src="img/09.png" alt="Figure 1: Anonymous class used to set listener"></p>
-</li>
-        
-          <li> <h1>Functional interface</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="05">
+          <h1>Functional interface</h1>
 <p>A functional interface is an interface that has just one abstract method, not including methods of the parent Java Object class, default methods or static methods.</p>
 <p>Here are four examples of functional interfaces, followed by an example of a non-functional interfaces.</p>
 <pre><code>interface Runnable {
@@ -758,9 +652,11 @@ public interface TextWatcher {
 
 }</code></pre>
 <p>Java language enthusiasts and budding language lawyers may be interested in the  complete formal definition which is available <a href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-9.html#jls-9.8">here</a>.</p>
-</li>
-        
-          <li> <h1>Lambda expressions</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="06">
+          <h1>Lambda expressions</h1>
 <p>A lambda expression could be described as an anonymous function - a block of code that is capable of expressing behaviour, is not associated with any class and that does not have a name.</p>
 <p>Figures 1 and 2<sup>1</sup> illustrate the syntax of lambda expressions.</p>
 <p><img src="img/10.png" alt="Figure 1: Lambda expression syntax"></p>
@@ -810,9 +706,11 @@ public class ResidenceActivity {
 <p><img src="img/13.png" alt="Figure 4: Error introduced by attempting to convert non-functional interface to lambda expression"></p>
 <h2> </h2>
 <p><sup>1</sup> <a href="https://www.youtube.com/watch?v=WXtVHTGDV9g&amp;list=PLMod1hYiIvSZL1xclvHcsV2dMiminf19x&amp;index=1">JDK 8 Lambdas MOOC Course. Oracle. Simon Ritter</a>. See Lesson 1-2.</p>
-</li>
-        
-          <li> <h1>Lambdas &amp; Android (Gradle configuration)</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="07">
+          <h1>Lambdas &amp; Android (Gradle configuration)</h1>
 <p>We are presently developing our Android apps in a Java 7 environment with <code>targetSdkVersion</code> set to 23 (Marshmallow). Version 24, Nougat, released in August 2016, introduces a new experimental tool chain called <a href="http://tools.android.com/tech-docs/jackandjill"><code>Jack and Jill</code></a> that provides support for a subset of Java 8 features. </p>
 <ul>
 <li>Java Android Compiler Kit (Jack)</li>
@@ -916,9 +814,11 @@ dependencies {
   compile &#39;com.android.support:appcompat-v7:23.4.0&#39;
 
 }</code></pre>
-</li>
-        
-          <li> <h1>Lambdas &amp; Android (Convert anonymous class)</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="08">
+          <h1>Lambdas &amp; Android (Convert anonymous class)</h1>
 <p>Open ResidenceActivity.java in Android Studio.</p>
 <p>We shall confine ourselves to refactoring the check box code only. Presently the listener associated with this widget is set using the interface or delegated method. We will change this to the use of an anonymous class and then convert the anonymous class to a lambda expression.</p>
 <ul>
@@ -950,26 +850,67 @@ dependencies {
 <p>To summarize, three approaches to setting a listener are illustrated in Figure 3.</p>
 <p><img src="img/16.png" alt="Figure 3: Three methods of setting a listener"> </p>
 <p>Add, commit and push this branch (lambda) to your remote repo. Then checkout the master branch and continue further labs from this point.</p>
-</li>
-        
-      </ul>
-    </div>
 
-    <script>
-      $(document).ready(function() {
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+  $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
   const $images = $('.lab img');
   jQuery.each($images, function(i) {
     if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass('');
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
       $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
       divLabel.append($images[i].alt);
-      $(divLabel).insertAfter($images[i]);
-      $('<br>').insertAfter($images[i]);
+      $(divLabel).insertBefore($images[i]);
     }
   });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
 });
 
-    </script>
-  </body>
+</script>
+</body>
 </html>

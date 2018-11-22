@@ -1,23 +1,27 @@
-
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+        type="text/css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+        rel="stylesheet"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <style>
     
 
@@ -63,361 +67,249 @@ h3 {
 
 
   </style>
+</head>
 
-  <body class="lab">
+<body>
 
+
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
     
-  <div class="uk-offcanvas-content">
-    <div id="offcanvas-usage" uk-offcanvas>
-      <div class="uk-offcanvas-bar">
-        <button class="uk-offcanvas-close" type="button" uk-close></button>
-        <ul class="uk-nav">
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic01/book-a-donation-01/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Donation-01
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-a/book-a-donation-02/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Donation-02
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-b/book-b-donation-03/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Donation-03
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-a-solutions-donation-03/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Donation-03-Solutions
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-b-myrent-00-Baseline/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-00 (Baseline)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-c-myrent-01-Widgets/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-01 (Widgets)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-a-myrent-02-Listview/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-02 (Listview)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-b-event-handling/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Event-Handling
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-a-myrent-03-Action-Bar-Dialogs/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-03 (Action Bar & Dialogs)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-b-myrent-04-fileIO/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-04 (FileIO)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-a-myrent-05-Up-Button/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-05 (Up Button)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-b-java-8/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lambda Expressions
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-c-event-handler-soln/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Event-Handling-Solution
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-a-myrent-06-Contact-Email/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-06 (Contact & Email)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-b-permissions/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-06a (Permissions)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-a-myrent-07-Fragments/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-07 (Fragments)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-b-twopane/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Two Pane
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-a-myrent-08-Deletion/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-08 (Deletion)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-b-myrent-09-Viewpager/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-09 (ViewPager)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-b/book-a-settings/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-10 (Settings)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-a-myrent-10-Maps-Google/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-11 (Maps - Google)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-b-myrent-10-Maps-MapBox/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-11a (Maps - MapBox)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-b/book-a-myrent-sqlite-SQLite/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRentSQLite (SQLite)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-a/book-a-myrent-12-SQLite/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-12 (SQLite)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-b/book-b-myrent-sqlite-ContentProvider/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRentSQLite (ContentProvider)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent (Play Service)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service-test/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent (JUnit Test)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-b-myrent-14-Retrofit-Client/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-13 (Client)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic10-a/book-b-services/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-14 (Services)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-a/book-a-myrent-11-Camera/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-15 (Camera)
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-b/book-a-crypto/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-App Signing & Crypto
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-c/book-a-myrent-16-Mongo/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-MyRent-16 (Mongo)
-                </a>
-              </li>
-            
-          
-        </ul>
-      </div>
-    </div>
+      <a href="../index.html"> 2-a: Activities & Layouts  </a>
+    
+  </header>
+  <div class="right tab-menu menu">
+    
+      <a class="item" data-tab="Donation-02">
+        Donation-02
+      </a>
+    
+      <a class="item" data-tab="01">
+        01
+      </a>
+    
+      <a class="item" data-tab="02">
+        02
+      </a>
+    
+      <a class="item" data-tab="03">
+        03
+      </a>
+    
+      <a class="item" data-tab="04">
+        04
+      </a>
+    
+      <a class="item" data-tab="05">
+        05
+      </a>
+    
+      <a class="item" data-tab="06">
+        06
+      </a>
+    
+      <a class="item" data-tab="07">
+        07
+      </a>
+    
+      <a class="item" data-tab="08">
+        08
+      </a>
+    
+      <a class="item" data-tab="09">
+        09
+      </a>
+    
+      <a class="item" data-tab="Exercises">
+        Exercises
+      </a>
+    
+      <a class="item" data-tab="Appendix">
+        Appendix
+      </a>
+    
   </div>
+</div>
 
-
-    <div uk-sticky>
-      <nav class="uk-navbar">
-        <div class="uk-navbar-left">
-          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
-                   uk-tooltip></a></li>
-            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
-                                     pos="bottom" uk-tooltip>2-a: Activities & Layouts </a></li>
-          </ul>
-        </div>
-        <div class="uk-navbar-right">
-          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
-              uk-switcher="connect: .switcher-container">
-            
-              <li><a href="#">Donation-02</a></li>
-            
-              <li><a href="#">01</a></li>
-            
-              <li><a href="#">02</a></li>
-            
-              <li><a href="#">03</a></li>
-            
-              <li><a href="#">04</a></li>
-            
-              <li><a href="#">05</a></li>
-            
-              <li><a href="#">06</a></li>
-            
-              <li><a href="#">07</a></li>
-            
-              <li><a href="#">08</a></li>
-            
-              <li><a href="#">09</a></li>
-            
-              <li><a href="#">Exercises</a></li>
-            
-              <li><a href="#">Appendix</a></li>
-            
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-    <div class="uk-container uk-container-expand">
-      <ul class="uk-switcher switcher-container">
-        
-          <li> <h1>Objectives</h1>
+<div class="ui pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic01/book-a-donation-01/index.html">Donation-01 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-a/book-a-donation-02/index.html">Donation-02 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-b/book-b-donation-03/index.html">Donation-03 </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-a-solutions-donation-03/index.html">Donation-03-Solutions </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-b-myrent-00-Baseline/index.html">MyRent-00 (Baseline) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-c-myrent-01-Widgets/index.html">MyRent-01 (Widgets) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-a-myrent-02-Listview/index.html">MyRent-02 (Listview) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-b-event-handling/index.html">Event-Handling </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-a-myrent-03-Action-Bar-Dialogs/index.html">MyRent-03 (Action Bar & Dialogs) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-b-myrent-04-fileIO/index.html">MyRent-04 (FileIO) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-a-myrent-05-Up-Button/index.html">MyRent-05 (Up Button) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-b-java-8/index.html">Lambda Expressions </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-c-event-handler-soln/index.html">Event-Handling-Solution </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-a-myrent-06-Contact-Email/index.html">MyRent-06 (Contact & Email) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-b-permissions/index.html">MyRent-06a (Permissions) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-a-myrent-07-Fragments/index.html">MyRent-07 (Fragments) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-b-twopane/index.html">Two Pane </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-a-myrent-08-Deletion/index.html">MyRent-08 (Deletion) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-b-myrent-09-Viewpager/index.html">MyRent-09 (ViewPager) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-b/book-a-settings/index.html">MyRent-10 (Settings) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-a-myrent-10-Maps-Google/index.html">MyRent-11 (Maps - Google) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-b-myrent-10-Maps-MapBox/index.html">MyRent-11a (Maps - MapBox) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-b/book-a-myrent-sqlite-SQLite/index.html">MyRentSQLite (SQLite) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-a/book-a-myrent-12-SQLite/index.html">MyRent-12 (SQLite) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-b/book-b-myrent-sqlite-ContentProvider/index.html">MyRentSQLite (ContentProvider) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service/index.html">MyRent (Play Service) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service-test/index.html">MyRent (JUnit Test) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-b-myrent-14-Retrofit-Client/index.html">MyRent-13 (Client) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic10-a/book-b-services/index.html">MyRent-14 (Services) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-a/book-a-myrent-11-Camera/index.html">MyRent-15 (Camera) </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-b/book-a-crypto/index.html">App Signing & Crypto </a>
+      
+    
+      
+        <a class="item"
+           href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-c/book-a-myrent-16-Mongo/index.html">MyRent-16 (Mongo) </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment">
+      <br>
+      
+        <div class="ui tab segment lab" data-tab="Donation-02">
+          <h1>Objectives</h1>
 <p>Introduce a second screen to display the list of donations made by the user. In addition, enable our app its first &quot;Model&quot; objects, which will be used to store the individual donations made by the user. </p>
-</li>
-        
-          <li> <h1>Donation-01 Solutions</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="01">
+          <h1>Donation-01 Solutions</h1>
 <p>In this lab we shall continue work on the NUC devices.</p>
 <p>You are recommend to tag each step.</p>
 <p>Continue building on your previous app. Alternatively use this version, but if you do then it will be necessary to change the remote tracking repo (see Appendix).</p>
@@ -431,9 +323,11 @@ MyRent-16 (Mongo)
 </ul>
 <p><img src="img/11.png" alt="Figure 2: Configure git VCS"></p>
 <p>Once you have opened the project in Android Studio you are ready to proceed with the lab, the first part of which is to provide solutions to the exercises at the end of Donation-01.</p>
-</li>
-        
-          <li> <h1>Package Name</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="02">
+          <h1>Package Name</h1>
 <p>This version is a little misconfigured - we have a leftover - the package name &#39;com.example.donation&#39; form the project generation wizard.<br> 
 This can be changed as follows:</p>
 <ul>
@@ -469,9 +363,11 @@ public class Donate extends AppCompatActivity</code></pre>
 <img src="img/23.png" alt="Figure 5: Clean project"></li>
 <li>Test by rebuilding (Build | Rebuild) and running (Run | Run &#39;app&#39;).</li>
 </ul>
-</li>
-        
-          <li> <h1>Menu</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="03">
+          <h1>Menu</h1>
 <p>Open <code>res/values/Strings.xml</code> and introduce a new String resource like this:</p>
 <pre><code class="lang-xml">    &lt;string name=&quot;menuReport&quot;&gt;Report&lt;/string&gt;</code></pre>
 <p>We have a menu resource called &#39;menu_donate.xml&#39; in the <code>res/menu</code> folder. Modify this file by adding this new menu item:</p>
@@ -496,9 +392,11 @@ public class Donate extends AppCompatActivity</code></pre>
 <pre><code>import android.widget.Toast;</code></pre>
 <p>Run the app and when you press the menu button (or the overflow menu) and select &#39;Report&#39;, you should see the toast message appear.</p>
 <p><img src="img/05.png" alt=""></p>
-</li>
-        
-          <li> <h1>Reports Activity</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="04">
+          <h1>Reports Activity</h1>
 <p>Before we start to design a new activity, Add a string resource in <code>res/values/strings.xml</code>:</p>
 <pre><code>&lt;string name=&quot;reportTitle&quot;&gt;Report&lt;/string&gt;</code></pre>
 <p>Design a new layout called <code>activity_report</code>. Do this by locating the <code>res/layout</code> folder and selecting <code>new-&gt;layout resource file</code>:</p>
@@ -618,9 +516,11 @@ public class Report extends AppCompatActivity
 <p>Note the location of the new element.</p>
 <p>Try it all now - it should load. Here is an example using the inbuilt emulator (AVD).</p>
 <p><img src="img/06.png" alt="Figure 2: Report rendered on Android AVD"></p>
-</li>
-        
-          <li> <h1>Application Object</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="05">
+          <h1>Application Object</h1>
 <p>In order to keep our application design coherent, we now bring in an &#39;Application&#39; object.</p>
 <p>Create a new class called `DonationApp&#39;:</p>
 <p><img src="img/33.png" alt=""></p>
@@ -671,9 +571,11 @@ public class DonationApp extends Application
 <p><img src="img/08.png" alt=""></p>
 <p>The filter used here is:</p>
 <p><img src="img/34.png" alt=""></p>
-</li>
-        
-          <li> <h1>Donation Model</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="06">
+          <h1>Donation Model</h1>
 <p>Create a new class called <code>Donation</code>:</p>
 <pre><code class="lang-java">package app.donation;
 
@@ -728,9 +630,11 @@ public class DonationApp extends Application
   }
 }</code></pre>
 <p>It manages a list of donations. It also centralises the &#39;makeDonation&#39; as as a method. </p>
-</li>
-        
-          <li> <h1>Refactored Donate</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="07">
+          <h1>Refactored Donate</h1>
 <p>The Donate activity can now be completely re factored to make use of the DonationApp object.</p>
 <p>First, introduce this new member into the class:</p>
 <pre><code>  private DonationApp app;</code></pre>
@@ -979,9 +883,11 @@ public class Donate extends AppCompatActivity
 
 &lt;/RelativeLayout&gt;</code></pre>
 <p><img src="img/13.png" alt="Figure 2: Sample donations made"></p>
-</li>
-        
-          <li> <h1>Refactored Report</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="08">
+          <h1>Refactored Report</h1>
 <p>We now rework Report to render the actual donations - held in the DonationApp list.</p>
 <p>First some layout additions. Include these new string in strings.xml</p>
 <pre><code>    &lt;string name=&quot;defaultAmount&quot;&gt;00&lt;/string&gt;
@@ -1088,9 +994,11 @@ class DonationAdapter extends ArrayAdapter&lt;Donation&gt;
 }</code></pre>
 <p>We will discuss this version in depth in class</p>
 <p>If all goes well - then you should be able to make donations, and and the see a list of these in the report activity.</p>
-</li>
-        
-          <li> <h1>Repository</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="09">
+          <h1>Repository</h1>
 <p>Here we shall describe how you can break the association with GitHub that you established to download the baseline <em>donation-android-2016</em> and push your refactored application to a new repository that you will create on your Bitbucket account.</p>
 <p>Access your Bitbucket account and create a repository named <em>donation-android-2016</em></p>
 <ul>
@@ -1128,9 +1036,11 @@ git push -u origin --tags</code></pre>
 <ul>
 <li>This will pull the latest commit of donation-android-2016.</li>
 </ul>
-</li>
-        
-          <li> <h1>Exercises</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="Exercises">
+          <h1>Exercises</h1>
 <p>Project so far:</p>
 <ul>
 <li>Available to clone from GitHub: <a href="https://github.com/wit-ictskills-2016/donation-android-2016.git">donation-android-2016</a></li>
@@ -1177,9 +1087,11 @@ git push -u origin --tags</code></pre>
 <p>Introduce a &#39;User&#39; into the models package to represent the user in the usual way. Maintain a list of Users in the DonationApp object. Whenever anyone registers, then create a new User object in this list.</p>
 <h2>Exercise 9</h2>
 <p>Implement the Login activity, to now only let users in to Donate if they are registered (i.e. a matching email + password in the list of users maintained by DonationApp)</p>
-</li>
-        
-          <li> <h1>Useful commands</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="Appendix">
+          <h1>Useful commands</h1>
 <h2>Linux</h2>
 <p>You create a folder with the mkdir command:</p>
 <pre><code>mkdir &lt;new folder&gt;</code></pre>
@@ -1211,26 +1123,67 @@ git config [--global] user.name
 git config [--global] user.email</code></pre>
 <p>You are not alone if you have difficulty understanding <code>man</code> pages. Here&#39;s a simple guide (that comes without a guarantee):</p>
 <p><a href="http://www.tfug.org/helpdesk/general/man.html">Beginners Guide to man Pages</a></p>
-</li>
-        
-      </ul>
-    </div>
 
-    <script>
-      $(document).ready(function() {
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+  $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
   const $images = $('.lab img');
   jQuery.each($images, function(i) {
     if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass('');
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
       $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
       divLabel.append($images[i].alt);
-      $(divLabel).insertAfter($images[i]);
-      $('<br>').insertAfter($images[i]);
+      $(divLabel).insertBefore($images[i]);
     }
   });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
 });
 
-    </script>
-  </body>
+</script>
+</body>
 </html>
