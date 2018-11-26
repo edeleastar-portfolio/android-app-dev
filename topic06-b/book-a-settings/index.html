@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,226 +66,254 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html"> 6-b: Settings  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="MyRent-10 (Settings)">
-        MyRent-10 (Settings)
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="05">
-        05
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html"> 6-b: Settings  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="MyRent-10 (Settings)">
+          MyRent-10 (Settings)
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic01/book-a-donation-01/index.html">Donation-01 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-a/book-a-donation-02/index.html">Donation-02 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-b/book-b-donation-03/index.html">Donation-03 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-a-solutions-donation-03/index.html">Donation-03-Solutions </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-b-myrent-00-Baseline/index.html">MyRent-00 (Baseline) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-c-myrent-01-Widgets/index.html">MyRent-01 (Widgets) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-a-myrent-02-Listview/index.html">MyRent-02 (Listview) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-b-event-handling/index.html">Event-Handling </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-a-myrent-03-Action-Bar-Dialogs/index.html">MyRent-03 (Action Bar & Dialogs) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-b-myrent-04-fileIO/index.html">MyRent-04 (FileIO) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-a-myrent-05-Up-Button/index.html">MyRent-05 (Up Button) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-b-java-8/index.html">Lambda Expressions </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-c-event-handler-soln/index.html">Event-Handling-Solution </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-a-myrent-06-Contact-Email/index.html">MyRent-06 (Contact & Email) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-b-permissions/index.html">MyRent-06a (Permissions) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-a-myrent-07-Fragments/index.html">MyRent-07 (Fragments) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-b-twopane/index.html">Two Pane </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-a-myrent-08-Deletion/index.html">MyRent-08 (Deletion) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-b-myrent-09-Viewpager/index.html">MyRent-09 (ViewPager) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-b/book-a-settings/index.html">MyRent-10 (Settings) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-a-myrent-10-Maps-Google/index.html">MyRent-11 (Maps - Google) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-b-myrent-10-Maps-MapBox/index.html">MyRent-11a (Maps - MapBox) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-b/book-a-myrent-sqlite-SQLite/index.html">MyRentSQLite (SQLite) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-a/book-a-myrent-12-SQLite/index.html">MyRent-12 (SQLite) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-b/book-b-myrent-sqlite-ContentProvider/index.html">MyRentSQLite (ContentProvider) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service/index.html">MyRent (Play Service) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service-test/index.html">MyRent (JUnit Test) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-b-myrent-14-Retrofit-Client/index.html">MyRent-13 (Client) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic10-a/book-b-services/index.html">MyRent-14 (Services) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-a/book-a-myrent-11-Camera/index.html">MyRent-15 (Camera) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-b/book-a-crypto/index.html">App Signing & Crypto </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-c/book-a-myrent-16-Mongo/index.html">MyRent-16 (Mongo) </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="MyRent-10 (Settings)">
-          <h1>Settings</h1>
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic01/book-a-donation-01/index.html">Donation-01 </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-a/book-a-donation-02/index.html">Donation-02 </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-b/book-b-donation-03/index.html">Donation-03 </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-a-solutions-donation-03/index.html">Donation-03-Solutions </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-b-myrent-00-Baseline/index.html">MyRent-00 (Baseline) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-c-myrent-01-Widgets/index.html">MyRent-01 (Widgets) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-a-myrent-02-Listview/index.html">MyRent-02 (Listview) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-b-event-handling/index.html">Event-Handling </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-a-myrent-03-Action-Bar-Dialogs/index.html">MyRent-03 (Action Bar & Dialogs) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-b-myrent-04-fileIO/index.html">MyRent-04 (FileIO) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-a-myrent-05-Up-Button/index.html">MyRent-05 (Up Button) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-b-java-8/index.html">Lambda Expressions </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-c-event-handler-soln/index.html">Event-Handling-Solution </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-a-myrent-06-Contact-Email/index.html">MyRent-06 (Contact & Email) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-b-permissions/index.html">MyRent-06a (Permissions) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-a-myrent-07-Fragments/index.html">MyRent-07 (Fragments) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-b-twopane/index.html">Two Pane </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-a-myrent-08-Deletion/index.html">MyRent-08 (Deletion) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-b-myrent-09-Viewpager/index.html">MyRent-09 (ViewPager) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-b/book-a-settings/index.html">MyRent-10 (Settings) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-a-myrent-10-Maps-Google/index.html">MyRent-11 (Maps - Google) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-b-myrent-10-Maps-MapBox/index.html">MyRent-11a (Maps - MapBox) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-b/book-a-myrent-sqlite-SQLite/index.html">MyRentSQLite (SQLite) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-a/book-a-myrent-12-SQLite/index.html">MyRent-12 (SQLite) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-b/book-b-myrent-sqlite-ContentProvider/index.html">MyRentSQLite (ContentProvider) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service/index.html">MyRent (Play Service) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service-test/index.html">MyRent (JUnit Test) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-b-myrent-14-Retrofit-Client/index.html">MyRent-13 (Client) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic10-a/book-b-services/index.html">MyRent-14 (Services) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-a/book-a-myrent-11-Camera/index.html">MyRent-15 (Camera) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-b/book-a-crypto/index.html">App Signing & Crypto </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-c/book-a-myrent-16-Mongo/index.html">MyRent-16 (Mongo) </a>
+        
+      
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="MyRent-10 (Settings)">
+            <h1>Settings</h1>
 <p>Settings allow a user to modify application features and behaviour. In this lab we demonstrate the use of settings to input a username, password pair, the size of the list of residences to download from the cloud and the frequency at which this list is automatically refreshed by a service or services. Services will be the subject of a future lab.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>Settings</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Settings</h1>
 <h2>Layout</h2>
 <p>Create a file <code>settings.xml</code> in a new folder  <code>xml</code> in <em>res</em> with the following content:</p>
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
@@ -324,10 +352,10 @@ h3 {
   &lt;string name=&quot;set_refresh_interval&quot;&gt;Refresh&lt;/string&gt;
   &lt;string name=&quot;set_refresh_interval_summary&quot;&gt;Frequency of cloud updates (minutes)&lt;/string&gt;</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>Activity-Fragment</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Activity-Fragment</h1>
 <p>Next we shall introduce the settings activity-fragment pair. Locate in a new package <code>org.wit.myrent.settings</code>. You may create this package by placing a new folder named <code>settings</code> in <code>myrent</code>.</p>
 <p>First create the SettingsActivity class:</p>
 <pre><code>package org.wit.myrent.settings;
@@ -402,10 +430,10 @@ public class SettingsFragment extends PreferenceFragment
     &lt;/activity&gt;</code></pre>
 <p>Test by compiling and installing onto the emulator or device. Check that the settings menu can be displayed.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h1>SettingsFragment (continued)</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>SettingsFragment (continued)</h1>
 <p>Here we shall implement the SharedPreferences.OnSharedPreferenceChangeListener interface:</p>
 <pre><code>public class SettingsFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener 
 {
@@ -436,10 +464,10 @@ public class SettingsFragment extends PreferenceFragment
     prefs.unregisterOnSharedPreferenceChangeListener(this);
   }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h2>SettingsFragment (continued)</h2>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h2>SettingsFragment (continued)</h2>
 <p>Enable up button in onCreate:</p>
 <pre><code>    setHasOptionsMenu(true);</code></pre>
 <p>Add the menu handler for the up button:</p>
@@ -460,10 +488,10 @@ public class SettingsFragment extends PreferenceFragment
 import org.wit.myrent.R;
 import static org.wit.android.helpers.IntentHelper.navigateUp;</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="05">
-          <h1>Settings pane</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>Settings pane</h1>
 <p>On launching MyRent the user is presented with the residence list view and it is here we decide to facilitate access to settings. This is illustrated in Figure 1:</p>
 <p><img src="img/01.png" alt="Figure 1: Settings pane accessible from list view"></p>
 <p>The default settings menu item has already been included as shown in Figure 2:</p>
@@ -478,14 +506,16 @@ import static org.wit.android.helpers.IntentHelper.navigateUp;</code></pre>
 <p><img src="img/03.png" alt="Figure 4: logcat displays result of changed settings"></p>
 <p>The application at the end of this lab is available for reference here: <a href="https://github.com/wit-ictskills-2016/myrent-10.git">myrent-10</a></p>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -505,7 +535,7 @@ import static org.wit.android.helpers.IntentHelper.navigateUp;</code></pre>
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -538,6 +568,16 @@ import static org.wit.android.helpers.IntentHelper.navigateUp;</code></pre>
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+        Unless otherwise stated, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. </p>
+      </div>
+    </div>
+  </body>
+
 </html>

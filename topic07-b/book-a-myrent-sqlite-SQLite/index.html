@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,258 +66,286 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html"> 7-b: SQLite  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="MyRentSQLite (SQLite)">
-        MyRentSQLite (SQLite)
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="05">
-        05
-      </a>
-    
-      <a class="item" data-tab="06">
-        06
-      </a>
-    
-      <a class="item" data-tab="07">
-        07
-      </a>
-    
-      <a class="item" data-tab="08">
-        08
-      </a>
-    
-      <a class="item" data-tab="09">
-        09
-      </a>
-    
-      <a class="item" data-tab="10">
-        10
-      </a>
-    
-      <a class="item" data-tab="Exercises">
-        Exercises
-      </a>
-    
-      <a class="item" data-tab="Appendix-A">
-        Appendix-A
-      </a>
-    
-      <a class="item" data-tab="Appendix-B">
-        Appendix-B
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html"> 7-b: SQLite  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="MyRentSQLite (SQLite)">
+          MyRentSQLite (SQLite)
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+        <a class="item" data-tab="06">
+          06
+        </a>
+      
+        <a class="item" data-tab="07">
+          07
+        </a>
+      
+        <a class="item" data-tab="08">
+          08
+        </a>
+      
+        <a class="item" data-tab="09">
+          09
+        </a>
+      
+        <a class="item" data-tab="10">
+          10
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+        <a class="item" data-tab="Appendix-A">
+          Appendix-A
+        </a>
+      
+        <a class="item" data-tab="Appendix-B">
+          Appendix-B
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic01/book-a-donation-01/index.html">Donation-01 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-a/book-a-donation-02/index.html">Donation-02 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-b/book-b-donation-03/index.html">Donation-03 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-a-solutions-donation-03/index.html">Donation-03-Solutions </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-b-myrent-00-Baseline/index.html">MyRent-00 (Baseline) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-c-myrent-01-Widgets/index.html">MyRent-01 (Widgets) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-a-myrent-02-Listview/index.html">MyRent-02 (Listview) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-b-event-handling/index.html">Event-Handling </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-a-myrent-03-Action-Bar-Dialogs/index.html">MyRent-03 (Action Bar & Dialogs) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-b-myrent-04-fileIO/index.html">MyRent-04 (FileIO) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-a-myrent-05-Up-Button/index.html">MyRent-05 (Up Button) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-b-java-8/index.html">Lambda Expressions </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-c-event-handler-soln/index.html">Event-Handling-Solution </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-a-myrent-06-Contact-Email/index.html">MyRent-06 (Contact & Email) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-b-permissions/index.html">MyRent-06a (Permissions) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-a-myrent-07-Fragments/index.html">MyRent-07 (Fragments) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-b-twopane/index.html">Two Pane </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-a-myrent-08-Deletion/index.html">MyRent-08 (Deletion) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-b-myrent-09-Viewpager/index.html">MyRent-09 (ViewPager) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-b/book-a-settings/index.html">MyRent-10 (Settings) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-a-myrent-10-Maps-Google/index.html">MyRent-11 (Maps - Google) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-b-myrent-10-Maps-MapBox/index.html">MyRent-11a (Maps - MapBox) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-b/book-a-myrent-sqlite-SQLite/index.html">MyRentSQLite (SQLite) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-a/book-a-myrent-12-SQLite/index.html">MyRent-12 (SQLite) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-b/book-b-myrent-sqlite-ContentProvider/index.html">MyRentSQLite (ContentProvider) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service/index.html">MyRent (Play Service) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service-test/index.html">MyRent (JUnit Test) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-b-myrent-14-Retrofit-Client/index.html">MyRent-13 (Client) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic10-a/book-b-services/index.html">MyRent-14 (Services) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-a/book-a-myrent-11-Camera/index.html">MyRent-15 (Camera) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-b/book-a-crypto/index.html">App Signing & Crypto </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-c/book-a-myrent-16-Mongo/index.html">MyRent-16 (Mongo) </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="MyRentSQLite (SQLite)">
-          <h1>Using SQLite in Android Development</h1>
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic01/book-a-donation-01/index.html">Donation-01 </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-a/book-a-donation-02/index.html">Donation-02 </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-b/book-b-donation-03/index.html">Donation-03 </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-a-solutions-donation-03/index.html">Donation-03-Solutions </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-b-myrent-00-Baseline/index.html">MyRent-00 (Baseline) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-c-myrent-01-Widgets/index.html">MyRent-01 (Widgets) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-a-myrent-02-Listview/index.html">MyRent-02 (Listview) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-b-event-handling/index.html">Event-Handling </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-a-myrent-03-Action-Bar-Dialogs/index.html">MyRent-03 (Action Bar & Dialogs) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-b-myrent-04-fileIO/index.html">MyRent-04 (FileIO) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-a-myrent-05-Up-Button/index.html">MyRent-05 (Up Button) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-b-java-8/index.html">Lambda Expressions </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-c-event-handler-soln/index.html">Event-Handling-Solution </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-a-myrent-06-Contact-Email/index.html">MyRent-06 (Contact & Email) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-b-permissions/index.html">MyRent-06a (Permissions) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-a-myrent-07-Fragments/index.html">MyRent-07 (Fragments) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-b-twopane/index.html">Two Pane </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-a-myrent-08-Deletion/index.html">MyRent-08 (Deletion) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-b-myrent-09-Viewpager/index.html">MyRent-09 (ViewPager) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-b/book-a-settings/index.html">MyRent-10 (Settings) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-a-myrent-10-Maps-Google/index.html">MyRent-11 (Maps - Google) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-b-myrent-10-Maps-MapBox/index.html">MyRent-11a (Maps - MapBox) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-b/book-a-myrent-sqlite-SQLite/index.html">MyRentSQLite (SQLite) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-a/book-a-myrent-12-SQLite/index.html">MyRent-12 (SQLite) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-b/book-b-myrent-sqlite-ContentProvider/index.html">MyRentSQLite (ContentProvider) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service/index.html">MyRent (Play Service) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service-test/index.html">MyRent (JUnit Test) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-b-myrent-14-Retrofit-Client/index.html">MyRent-13 (Client) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic10-a/book-b-services/index.html">MyRent-14 (Services) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-a/book-a-myrent-11-Camera/index.html">MyRent-15 (Camera) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-b/book-a-crypto/index.html">App Signing & Crypto </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-c/book-a-myrent-16-Mongo/index.html">MyRent-16 (Mongo) </a>
+        
+      
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="MyRentSQLite (SQLite)">
+            <h1>Using SQLite in Android Development</h1>
 <p>Working with a subset of the MyRent app, we develop a module to persist data using SQLite, use the Android Debug Bridge (adb) commandline tool to view the database content and as an exercise replace the file system in MyRent with an SQLite implementation.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>Baseline app</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Baseline app</h1>
 <p>Create a baseline app named MyRentSQLite and complete the wizard screesn, following the steps shown in the following figures 1 to 4.</p>
 <p>On completing the wizard, the app opens within Android Studio. This is shown in Figures 6 and 6.</p>
 <p><img src="img/01.png" alt="Figure 1:">
@@ -355,10 +383,10 @@ dependencies {
 }</code></pre>
 <p>Build and install apk on a device or emulator to display the standard hello world screen as shown in Figure 6.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>Project structure</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Project structure</h1>
 <p>To closely mimic the MyRent app structure, create three packages, <em>activities</em>, <em>app</em> and <em>models</em> as shown in the following pictures:</p>
 <p><img src="img/07.png" alt="Figure 1">
 <img src="img/08.png" alt="Figure 2">
@@ -379,10 +407,10 @@ This appears to have been resolved in version 2.1.3 but if not then simply copy 
 <p>We will then have implemented Create, Read, Update and Delete (CRUD) capabilities.</p>
 <p>Note: not all import statements are included in the code provided. Code completion hints are generally provided that simplifies this task.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h1>Add Residence</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>Add Residence</h1>
 <p>We will build the app incrementally, beginning with the adding of a single Residence object to the database. </p>
 <p>The refactoring comprises:</p>
 <ul>
@@ -601,10 +629,10 @@ public class MyRent extends AppCompatActivity implements View.OnClickListener
   }
 }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h1>Test using adb</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Test using adb</h1>
 <p>To check that the record is correctly inserted into the database we shall use the Android Debug Bridge (adb) commandline tool. You should refer to the Appendix for instructions in the configuration and use of <em>adb</em>.</p>
 <p>Run MyRentSQLite app and add a residence by clicking on the Add Residence button.</p>
 <p>Switch to a terminal and execute the command:</p>
@@ -664,10 +692,10 @@ sqlite&gt;</code></pre>
 <li><a href="https://developer.android.com/studio/command-line/adb.html">Android Debug Bridge</a></li>
 </ul>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="05">
-          <h1>Select a Residence</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>Select a Residence</h1>
 <p>In this step, we provide the additional code to select a single residence from the database.</p>
 <h2>Layout (xml)</h2>
 <p>Add a <em>Delete Residence</em> button to the layout:</p>
@@ -749,10 +777,10 @@ import android.database.Cursor;</code></pre>
 <pre><code>import android.widget.Toast;
 import java.util.UUID;</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="06">
-          <h1>Delete a Residence</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="06">
+            <h1>Delete a Residence</h1>
 <p>In this step, we provide the additional code to delete a single residence from the database.</p>
 <h2>Layout (xml)</h2>
 <p>Add a <em>Delete Residence</em> button to the layout:</p>
@@ -817,10 +845,10 @@ import java.util.UUID;</code></pre>
   }</code></pre>
 <p>Debug into the app and using adb or otherwise verify that this feature works correctly.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="07">
-          <h1>List all residences</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="07">
+            <h1>List all residences</h1>
 <p>In this step we shall select the entire tableResidences record set and store in a List array.</p>
 <h2>Layout (xml)</h2>
 <pre><code>  &lt;Button
@@ -872,10 +900,10 @@ import java.util.UUID;</code></pre>
 <pre><code>import java.util.List;</code></pre>
 <p>Debug into the app to verify that this feature works correctly.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="08">
-          <h1>Delete all</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="08">
+            <h1>Delete all</h1>
 <p>In this step we shall delete the entire tableResidences record set.</p>
 <h2>Layout (xml)</h2>
 <pre><code>
@@ -932,10 +960,10 @@ import java.util.UUID;</code></pre>
 
   }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="09">
-          <h1>Residence model complete</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="09">
+            <h1>Residence model complete</h1>
 <p>Here will shall add the remaining fields to the Residence model and refactor the database helper appropriately.</p>
 <h2>Model Residence</h2>
 <pre><code>package sqlite.myrentsqlite.models;
@@ -1143,10 +1171,10 @@ public class DbHelper extends SQLiteOpenHelper
   }
 }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="10">
-          <h1>Update</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="10">
+            <h1>Update</h1>
 <p>In this the final step we shall update a tableResidences record - a Residence object.</p>
 <h2>Layout (xml)</h2>
 <pre><code>  &lt;Button
@@ -1215,10 +1243,10 @@ public class DbHelper extends SQLiteOpenHelper
   }</code></pre>
 <p>A completed version of the application is available to download from GitHub: <a href="https://github.com/wit-ictskills-2016/myrent-sqlite.git">MyRentSQLite</a></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Exercises">
-          <h1>Exercises</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <h1>Exercises</h1>
 <p>(1) Use this lab to integrate an SQLite database in MyRent app.</p>
 <p>(2 )Add a feature to DbHelper to insert a list of Residence records. </p>
 <p>Presently a method exists to insert a single record. Extend the:</p>
@@ -1228,10 +1256,10 @@ public class DbHelper extends SQLiteOpenHelper
 <li>DbHelper (add residences method).</li>
 </ul>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Appendix-A">
-          <h1>Android Debug Bridge (adb)</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Appendix-A">
+            <h1>Android Debug Bridge (adb)</h1>
 <p><strong>adb</strong> is a commandline tool to view and manipulate SQlite databases generated within an Android app.</p>
 <p>Here is the link for official Android documentation: <a href="https://developer.android.com/studio/command-line/adb.html">Android Debug Bridge</a></p>
 <p>In this step we will:</p>
@@ -1275,10 +1303,10 @@ public class DbHelper extends SQLiteOpenHelper
 <p><em>rm -rf sqlite.myrentsqlite/databases</em></p>
 <p>It&#39;s important to note that the name of the folder containg the database, <em>sqlite.myrentsqlite</em> , derives from the package name in the AndroidManifest.xml file and that the name of the database, <em>residences.db</em>, is that which we have assigned in DbHelper.java. The table, <em>tableResidences</em>, will also have been assigned in DbHelper.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Appendix-B">
-          <h1>SQLite Browser</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Appendix-B">
+            <h1>SQLite Browser</h1>
 <p>A third-party <a href="http://sqlitebrowser.org/">SQLite browser</a> provides an alternative approach to <em>adb</em> to view the database content.</p>
 <p><img src="img/12.png" alt="Figure 1: SQLite browser"></p>
 <p>Detailed information on the installation and use of the browser is contained in the <em>stackoverflow</em> article <a href="http://stackoverflow.com/questions/17529766/view-contents-of-database-file-in-android-studio">View contents of database file in Android Studio</a>, summarized in the the following screenshots:</p>
@@ -1286,14 +1314,16 @@ public class DbHelper extends SQLiteOpenHelper
 <img src="img/14.png" alt="Figure 3: Viewing Android Studio generated database">
 <img src="img/15.png" alt="Figure 4: Sample tableResidences records"></p>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -1313,7 +1343,7 @@ public class DbHelper extends SQLiteOpenHelper
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -1346,6 +1376,16 @@ public class DbHelper extends SQLiteOpenHelper
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+        Unless otherwise stated, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. </p>
+      </div>
+    </div>
+  </body>
+
 </html>

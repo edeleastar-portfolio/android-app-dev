@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,255 +66,283 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html"> 5-b: Fragments  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="Two Pane">
-        Two Pane
-      </a>
-    
-      <a class="item" data-tab="01">
-        01
-      </a>
-    
-      <a class="item" data-tab="02">
-        02
-      </a>
-    
-      <a class="item" data-tab="03">
-        03
-      </a>
-    
-      <a class="item" data-tab="04">
-        04
-      </a>
-    
-      <a class="item" data-tab="05">
-        05
-      </a>
-    
-      <a class="item" data-tab="06">
-        06
-      </a>
-    
-      <a class="item" data-tab="07">
-        07
-      </a>
-    
-      <a class="item" data-tab="08">
-        08
-      </a>
-    
-      <a class="item" data-tab="09">
-        09
-      </a>
-    
-      <a class="item" data-tab="Exercises">
-        Exercises
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html"> 5-b: Fragments  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Two Pane">
+          Two Pane
+        </a>
+      
+        <a class="item" data-tab="01">
+          01
+        </a>
+      
+        <a class="item" data-tab="02">
+          02
+        </a>
+      
+        <a class="item" data-tab="03">
+          03
+        </a>
+      
+        <a class="item" data-tab="04">
+          04
+        </a>
+      
+        <a class="item" data-tab="05">
+          05
+        </a>
+      
+        <a class="item" data-tab="06">
+          06
+        </a>
+      
+        <a class="item" data-tab="07">
+          07
+        </a>
+      
+        <a class="item" data-tab="08">
+          08
+        </a>
+      
+        <a class="item" data-tab="09">
+          09
+        </a>
+      
+        <a class="item" data-tab="Exercises">
+          Exercises
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic01/book-a-donation-01/index.html">Donation-01 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-a/book-a-donation-02/index.html">Donation-02 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-b/book-b-donation-03/index.html">Donation-03 </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-a-solutions-donation-03/index.html">Donation-03-Solutions </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-b-myrent-00-Baseline/index.html">MyRent-00 (Baseline) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-c-myrent-01-Widgets/index.html">MyRent-01 (Widgets) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-a-myrent-02-Listview/index.html">MyRent-02 (Listview) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-b-event-handling/index.html">Event-Handling </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-a-myrent-03-Action-Bar-Dialogs/index.html">MyRent-03 (Action Bar & Dialogs) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-b-myrent-04-fileIO/index.html">MyRent-04 (FileIO) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-a-myrent-05-Up-Button/index.html">MyRent-05 (Up Button) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-b-java-8/index.html">Lambda Expressions </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-c-event-handler-soln/index.html">Event-Handling-Solution </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-a-myrent-06-Contact-Email/index.html">MyRent-06 (Contact & Email) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-b-permissions/index.html">MyRent-06a (Permissions) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-a-myrent-07-Fragments/index.html">MyRent-07 (Fragments) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-b-twopane/index.html">Two Pane </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-a-myrent-08-Deletion/index.html">MyRent-08 (Deletion) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-b-myrent-09-Viewpager/index.html">MyRent-09 (ViewPager) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-b/book-a-settings/index.html">MyRent-10 (Settings) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-a-myrent-10-Maps-Google/index.html">MyRent-11 (Maps - Google) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-b-myrent-10-Maps-MapBox/index.html">MyRent-11a (Maps - MapBox) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-b/book-a-myrent-sqlite-SQLite/index.html">MyRentSQLite (SQLite) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-a/book-a-myrent-12-SQLite/index.html">MyRent-12 (SQLite) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-b/book-b-myrent-sqlite-ContentProvider/index.html">MyRentSQLite (ContentProvider) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service/index.html">MyRent (Play Service) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service-test/index.html">MyRent (JUnit Test) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-b-myrent-14-Retrofit-Client/index.html">MyRent-13 (Client) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic10-a/book-b-services/index.html">MyRent-14 (Services) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-a/book-a-myrent-11-Camera/index.html">MyRent-15 (Camera) </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-b/book-a-crypto/index.html">App Signing & Crypto </a>
-      
-    
-      
-        <a class="item"
-           href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-c/book-a-myrent-16-Mongo/index.html">MyRent-16 (Mongo) </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="Two Pane">
-          <h1>Fragments</h1>
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic01/book-a-donation-01/index.html">Donation-01 </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-a/book-a-donation-02/index.html">Donation-02 </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic02-b/book-b-donation-03/index.html">Donation-03 </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-a-solutions-donation-03/index.html">Donation-03-Solutions </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-b-myrent-00-Baseline/index.html">MyRent-00 (Baseline) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-a/book-c-myrent-01-Widgets/index.html">MyRent-01 (Widgets) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-a-myrent-02-Listview/index.html">MyRent-02 (Listview) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic03-b/book-b-event-handling/index.html">Event-Handling </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-a-myrent-03-Action-Bar-Dialogs/index.html">MyRent-03 (Action Bar & Dialogs) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-a/book-b-myrent-04-fileIO/index.html">MyRent-04 (FileIO) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-a-myrent-05-Up-Button/index.html">MyRent-05 (Up Button) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-b-java-8/index.html">Lambda Expressions </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic04-b/book-c-event-handler-soln/index.html">Event-Handling-Solution </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-a-myrent-06-Contact-Email/index.html">MyRent-06 (Contact & Email) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-a/book-b-permissions/index.html">MyRent-06a (Permissions) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-a-myrent-07-Fragments/index.html">MyRent-07 (Fragments) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic05-b/book-b-twopane/index.html">Two Pane </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-a-myrent-08-Deletion/index.html">MyRent-08 (Deletion) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-a/book-b-myrent-09-Viewpager/index.html">MyRent-09 (ViewPager) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic06-b/book-a-settings/index.html">MyRent-10 (Settings) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-a-myrent-10-Maps-Google/index.html">MyRent-11 (Maps - Google) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-a/book-b-myrent-10-Maps-MapBox/index.html">MyRent-11a (Maps - MapBox) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic07-b/book-a-myrent-sqlite-SQLite/index.html">MyRentSQLite (SQLite) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-a/book-a-myrent-12-SQLite/index.html">MyRent-12 (SQLite) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic08-b/book-b-myrent-sqlite-ContentProvider/index.html">MyRentSQLite (ContentProvider) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service/index.html">MyRent (Play Service) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-a-myrent-service-test/index.html">MyRent (JUnit Test) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic09-a/book-b-myrent-14-Retrofit-Client/index.html">MyRent-13 (Client) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic10-a/book-b-services/index.html">MyRent-14 (Services) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-a/book-a-myrent-11-Camera/index.html">MyRent-15 (Camera) </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-b/book-a-crypto/index.html">App Signing & Crypto </a>
+        
+      
+        
+          <a class="item"
+             href="https://edeleastar-portfolio.github.io/android-app-dev//topic11-c/book-a-myrent-16-Mongo/index.html">MyRent-16 (Mongo) </a>
+        
+      
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Two Pane">
+            <h1>Fragments</h1>
 <p> In the previous lab we gained experience in using single-pane screens, a pane containing only a single fragment. Here we develop a simple application to demonstate how two fragments may be successively rendered on a single pane in portrait mode. We provide the same feature in landscape mode but additionaly allow the simultaneous rendering of an additional fragment. This is sometimes referred to as the master-detail pattern.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="01">
-          <h1>Preview</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="01">
+            <h1>Preview</h1>
 <p>Many strategies exist for creating screen layouts. Some of these are discussed in the official documentation article <a href="https://developer.android.com/training/design-navigation/multiple-sizes.html">Design for Multiple Tablet Orientations</a>. In this lab we provide a simple demonstration of the master-detail pattern in landscape mode. A single pane (activity) simultaneously hosts two fragments.</p>
 <p> In portrait mode in the demonstration, a pane may support only one fragment at any one time.  A menu option is provided to attach either of two fragments to a single activity. This is  illustrated here in Figures 1 and 2.</p>
 <p><img src="img/01.png" alt="Figure 1: Fragments swapped in and out of a single activity"></p>
 <p><img src="img/02.png" alt="Figure 2: Two fragments simultaneously displayed on same pane"></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="02">
-          <h1>Baseline app</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="02">
+            <h1>Baseline app</h1>
 <p>Using Android Studio IDE create a baseline app, selecting an empty activity and wizard default values. To facilitate direct use of code snippets in this lab, choose <code>wit.ie</code> as domain and <code>Two Pane</code> as the app name. The aim is to ensure your applicationId as shown below in the sample gradle file is `ie.wit.twopane&#39;.</p>
 <p>Change to app build.gradle to align with the Android SDK NUC configuration.</p>
 <pre><code>
@@ -376,10 +404,10 @@ Thumbs.db
 .gradle
 build/</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="03">
-          <h1>Layouts</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="03">
+            <h1>Layouts</h1>
 <p>For ease of identification we shall colour fragment backgrounds. Add the following colours to the <code>colors.xml</code> file in <code>res/values</code>:</p>
 <pre><code>  &lt;color name=&quot;pink100&quot;&gt;#F8BBD0&lt;/color&gt;
   &lt;color name=&quot;purple100&quot;&gt;#E1BEE7&lt;/color&gt;
@@ -442,10 +470,10 @@ build/</code></pre>
       android:layout_alignParentStart=&quot;true&quot;/&gt;
 &lt;/RelativeLayout&gt;</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="04">
-          <h1>Fragment (Java)</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="04">
+            <h1>Fragment (Java)</h1>
 <p>Corresponding to the 2 fragment layouts just defined, add the following two Java fragments in <code>ie.wit.twopane</code>:</p>
 <p>Fragment_1.java</p>
 <pre><code>
@@ -498,10 +526,10 @@ public class Fragment_2 extends Fragment
   }
 }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="05">
-          <h1>Activity</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="05">
+            <h1>Activity</h1>
 <p>Refactor the default MainActivity Java file as follows:</p>
 <p>Add an ActionBar field:</p>
 <pre><code>
@@ -525,10 +553,10 @@ import android.support.v4.app.FragmentManager;</code></pre>
 <p>Build and run the app. The output should resemble that in Figure 1.</p>
 <p><img src="img/03.png" alt="Figure 1: Display single fragment"></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="06">
-          <h1>Fragments (menu)</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="06">
+            <h1>Fragments (menu)</h1>
 <p>We shall now provide the following features. These, it must be stressed, are purely for test and demonstration purposes and would not feature in production-standard code.</p>
 <ul>
 <li>A menu with options to attach either of Fragment 1 and Fragment 2.</li>
@@ -589,10 +617,10 @@ import android.view.MenuItem;</code></pre>
 <p>Build and run the app. Exercise the menus. Check the logcat pane and verify the log messages in onOptionsItemSelected are displayed.</p>
 <p><img src="img/04.png" alt="Figure 1: Menu select fragment to be displayed"></p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="07">
-          <h1>Fragments (swap)</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="07">
+            <h1>Fragments (swap)</h1>
 <p>Refactor MainActivty to allow menu choice to determine which fragment is displayed:</p>
 <p>Create a method <code>replacementFragment</code>:</p>
 <pre><code>  /**
@@ -625,10 +653,10 @@ import android.view.MenuItem;</code></pre>
   }</code></pre>
 <p>Build and run the app. Exercise the menu and verify that the appropriate fragment is displayed in response to a particular menu option choice. This should work both in portrait and landscape mode.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="08">
-          <h1>Master-Detail pattern</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="08">
+            <h1>Master-Detail pattern</h1>
 <p>We now implement the master-detail pattern in landscape mode. In portrait mode, no change in the functionality of the app should be apparent.</p>
 <p>This requires the introduction of the following:</p>
 <ul>
@@ -843,10 +871,10 @@ public class MainActivity extends AppCompatActivity
 
 }</code></pre>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="09">
-          <h1>Master-Detail (Fragment)</h1>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="09">
+            <h1>Master-Detail (Fragment)</h1>
 <p>We require a new fragment to locate in the left-most position in the landscape master-detail pane.</p>
 <p>Fragment_main</p>
 <pre><code>package ie.wit.twopane;
@@ -908,10 +936,10 @@ public class Fragment_main extends Fragment
 &lt;/RelativeLayout&gt;</code></pre>
 <p>Build, run and exercise the menu options in both landscape and portrait and verify expected behaviour as shown in Figures 1 and 2 in step 01.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Exercises">
-          <p>[1] Hide the menu option <code>Fragment Main</code> in landscape mode in the Master-Detail pattern. See <a href="http://stackoverflow.com/questions/10692755/how-do-i-hide-a-menu-item-in-the-actionbar">Stackoverflow article - How do I hide a menu item in the actionbar?</a></p>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Exercises">
+            <p>[1] Hide the menu option <code>Fragment Main</code> in landscape mode in the Master-Detail pattern. See <a href="http://stackoverflow.com/questions/10692755/how-do-i-hide-a-menu-item-in-the-actionbar">Stackoverflow article - How do I hide a menu item in the actionbar?</a></p>
 <p>[2] Examine the code in the previous lab. The activity-fragment design contains a fundamental error:</p>
 <ul>
 <li>Can you identify it?</li>
@@ -926,14 +954,16 @@ public class Fragment_main extends Fragment
 <p>Consider <a href="https://en.wikipedia.org/wiki/Android_version_history">version 4.4 (KitKat API 19)</a> and later.</p>
 <p>Refer to official documentation <a href="https://developer.android.com/training/multiscreen/screensizes.html">Supporting Different Screen Sizes</a>.</p>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -953,7 +983,7 @@ public class Fragment_main extends Fragment
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -986,6 +1016,16 @@ public class Fragment_main extends Fragment
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+        Unless otherwise stated, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. </p>
+      </div>
+    </div>
+  </body>
+
 </html>
